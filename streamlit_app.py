@@ -31,7 +31,7 @@ def get_fruityvice_data(this_fruit_choice):
 
 #Snowflake related functions
 def get_fruit_load_list():
-    my_cur = my_cnx.cursor():
+    my_cur = my_cnx.cursor()
     my_cur.execute("SELECT * from fruit_load_list")
     return my_cur.fetchall()
 
