@@ -31,9 +31,14 @@ def get_fruityvice_data(this_fruit_choice):
 
 #Snowflake related functions
 def get_fruit_load_list():
-    my_cur = my_cnx.cursor()
-    my_cur.execute("SELECT * from fruit_load_list")
-    return my_cur.fetchall()
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("SELECT * from fruit_load_list")
+        return my_cur.fetchall()
+
+#Allow the end uuser to add a fruit to the list
+#def insert_row_snowflake(new_fruit):
+#    with my_cnx.cursor() as my_cur:
+        
 
 #New Section to display fruitvice api response
 streamlit.header("Fruityvice Fruit Advice!")
